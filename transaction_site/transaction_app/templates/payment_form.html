@@ -5,14 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Payment</title>
+    <style>
+        /* Reset some basic styles */
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Center the form container */
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Style the form inputs */
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        /* Style the submit button */
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        /* Hover effect for button */
+        
+        button:hover {
+            background-color: #218838;
+        }
+        /* Add shadow on focus of input fields */
+        
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        /* Blurry effect on form inputs when button is clicked */
+        
+        .blurred {
+            filter: blur(1.5px);
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Make Payment</h2>
-    <form method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit">Pay Now</button>
-    </form>
+    <div class="container">
+        <h2>Make Payment</h2>
+        <form method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" onclick="blurInputs()">Pay Now</button>
+        </form>
+    </div>
+
+    <script>
+        function blurInputs() {
+            // Select all input elements inside the form
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.classList.add('blurred');
+            });
+        }
+    </script>
 </body>
 
 </html>
