@@ -4,8 +4,8 @@ set -e
 # Install dependencies
 pip install -r requirements.txt
 
-# Verify Django can find the settings
-export DJANGO_SETTINGS_MODULE=transaction_site.settings
+# Set correct Django settings module
+export DJANGO_SETTINGS_MODULE=transaction_site.transaction_site.settings
 
 # Run Django commands
 python manage.py collectstatic --noinput

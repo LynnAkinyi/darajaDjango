@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django_daraja',
-    'transaction_app',
+     'transaction_app.apps.TransactionAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
