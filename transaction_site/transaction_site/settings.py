@@ -23,9 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0k#m(da5=dikor^s&pb)s@(awh@zef0ei2&_hgucct5s+vmnlv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['*.render.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -164,10 +163,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Security settings for production
-DEBUG = False
-ALLOWED_HOSTS = ['*.render.com', 'localhost', '127.0.0.1']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
