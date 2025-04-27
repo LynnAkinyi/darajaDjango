@@ -1,0 +1,1 @@
+web: gunicorn transaction_site.wsgi:application
